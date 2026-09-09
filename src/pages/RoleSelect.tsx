@@ -9,7 +9,8 @@ import { images } from '../data/artisans';
 const greeting = 'Welcome! Are you here to sell your craft, or to buy?';
 
 export function RoleSelect() {
-  const { setMode, speak } = useApp();
+  const { setMode, speak, t } = useApp();
+  const greeting = t('welcomeGreeting');
   useAmbientPrompt(greeting);
 
   return (
@@ -29,7 +30,7 @@ export function RoleSelect() {
               Saanjh
             </h1>
             <p className="mt-2 max-w-[280px] text-lg leading-7 text-ink-100 lg:mx-auto lg:max-w-md lg:text-xl">
-              A market for handmade things, spoken in your language.
+              {t('welcomeGreeting')}
             </p>
             <button
               type="button"
@@ -44,15 +45,15 @@ export function RoleSelect() {
 
         <div className="mx-auto max-w-2xl space-y-4 px-5 py-6 lg:px-8 lg:py-10">
           <h2 className="text-artisan-label font-bold text-ink-900">
-            What brings you here?
+            {t('whatBringsYouHere')}
           </h2>
 
           <div className="space-y-4 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0">
             <RoleCard
               to="/language"
               onSelect={() => setMode('artisan')}
-              title="I make and sell crafts"
-              subtitle="List what you made by speaking. No typing needed."
+              title={t('sellCraftsTitle')}
+              subtitle={t('sellCraftsSubtitle')}
               image={images.artisanWoman}
               emphasis />
             
@@ -60,8 +61,8 @@ export function RoleSelect() {
             <RoleCard
               to="/language"
               onSelect={() => setMode('buyer')}
-              title="I want to buy crafts"
-              subtitle="Browse, search and order directly from artisans."
+              title={t('buyCraftsTitle')}
+              subtitle={t('buyCraftsSubtitle')}
               icon={<ShoppingBasketIcon className="h-12 w-12" aria-hidden="true" />} />
           </div>
           

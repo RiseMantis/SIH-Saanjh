@@ -22,7 +22,7 @@ const categories: (CraftCategory | 'All')[] = [
 export function Discover() {
   const [category, setCategory] = useState<CraftCategory | 'All'>('All');
   const [dbProducts, setDbProducts] = useState<Product[]>([]);
-  const { saved, toggleSaved } = useApp();
+  const { saved, toggleSaved, t } = useApp();
 
   useEffect(() => {
     async function loadListings() {
@@ -71,7 +71,7 @@ export function Discover() {
         <div className="flex items-center justify-between px-4 pb-2 pt-3">
           <div>
             <h1 className="text-xl font-bold leading-tight text-ink-900">
-              Discover
+              {t('discover')}
             </h1>
             <p className="flex items-center gap-1 text-xs text-ink-500">
               <MapPinIcon className="h-3 w-3" aria-hidden="true" />

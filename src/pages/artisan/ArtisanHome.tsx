@@ -16,7 +16,7 @@ import { artisanOrders } from '../../data/orders';
 import { notifications } from '../../data/notifications';
 
 export function ArtisanHome() {
-  const { speak } = useApp();
+  const { speak, t } = useApp();
   const ongoing = artisanOrders.filter(
     (o) => o.status === 'ordered' || o.status === 'being-made'
   ).length;
@@ -61,7 +61,7 @@ export function ArtisanHome() {
           <CameraIcon className="h-14 w-14" aria-hidden="true" />
         </span>
         <span className="text-[30px] font-bold leading-9">
-          Add a new product
+          {t('addProduct')}
         </span>
         <span className="text-lg leading-6 text-clay-50">
           Take one photo and tell me about it

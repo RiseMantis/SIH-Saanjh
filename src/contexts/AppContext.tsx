@@ -7,6 +7,7 @@ import React, {
   useState } from
 'react';
 import type { AppMode, BuyerAccountType } from '../types';
+import { getTranslation } from '../data/translations';
 
 export interface ProductDraft {
   photo: string | null;
@@ -52,6 +53,7 @@ interface AppContextValue {
   setMode: (mode: AppMode) => void;
   languageId: string;
   setLanguageId: (id: string) => void;
+  t: (key: string) => string;
   buyerAccountType: BuyerAccountType;
   setBuyerAccountType: (type: BuyerAccountType) => void;
   online: boolean;
@@ -127,12 +129,18 @@ export function AppProvider({ children }: {children: React.ReactNode;}) {
     setCart((prev) => prev.includes(id) ? prev : [...prev, id]);
   }, []);
 
+  const t = useCallback(
+    (key: string) => getTranslation(key, languageId),
+    [languageId]
+  );
+
   const value = useMemo<AppContextValue>(
     () => ({
       mode,
       setMode,
       languageId,
       setLanguageId,
+      t,
       buyerAccountType,
       setBuyerAccountType,
       online,
@@ -153,6 +161,7 @@ export function AppProvider({ children }: {children: React.ReactNode;}) {
     [
     mode,
     languageId,
+    t,
     buyerAccountType,
     online,
     soundOn,
