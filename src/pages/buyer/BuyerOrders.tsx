@@ -23,7 +23,7 @@ export function BuyerOrders() {
   });
 
   return (
-    <div className="mx-auto max-w-5xl pb-6">
+    <div className="mx-auto max-w-5xl px-4 pb-6 lg:px-8">
       <header className="sticky top-0 z-20 border-b border-sand-300 bg-sand-100/95 px-4 pb-2.5 pt-3 backdrop-blur">
         <h1 className="text-xl font-bold text-ink-900">Orders</h1>
         <ul className="mt-2 flex gap-2" role="tablist" aria-label="Order filter">

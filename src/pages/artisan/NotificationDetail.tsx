@@ -27,7 +27,7 @@ export function NotificationDetail() {
   useAmbientPrompt(item.spoken);
 
   return (
-    <div className="pb-40">
+    <div className="mx-auto max-w-3xl pb-40 lg:px-8">
       <header className="flex items-center gap-3 border-b border-sand-300 bg-white px-3 py-3">
         <button
           type="button"

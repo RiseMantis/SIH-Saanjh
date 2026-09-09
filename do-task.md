@@ -17,26 +17,26 @@
 - [x] Modify `BuyerLayout.tsx` — integrate top nav + tab bar switching
 
 ## Phase 3: Page Responsive Updates
-- [/] `RoleSelect.tsx` — side-by-side cards on desktop
-- [/] `ArtisanHome.tsx` — multi-column summary cards
-- [/] `Discover.tsx` — product grid layout
-- [ ] `SearchScreen.tsx` — results grid
-- [ ] `AddProduct.tsx` — centered wizard
-- [ ] `ArtisanOrders.tsx` — 2-column order cards
-- [ ] `BuyerOrders.tsx` — 2-column order cards
-- [ ] `ArtisanAccount.tsx` — centered 2-col settings
-- [ ] `BuyerAccount.tsx` — centered 2-col settings
-- [ ] `ProductDetail.tsx` — 2-col image+details
-- [ ] `ArtisanOrderDetail.tsx` — centered content
-- [ ] `BuyerOrderDetail.tsx` — centered content
-- [ ] `ArtisanSignup.tsx` — centered form
-- [ ] `BuyerSignup.tsx` — centered form
-- [ ] `PostRequest.tsx` — centered form
-- [ ] `ArtisanProfile.tsx` — centered content
-- [ ] `NotificationDetail.tsx` — centered content
+- [x] `RoleSelect.tsx` — side-by-side cards on desktop
+- [x] `ArtisanHome.tsx` — multi-column summary cards
+- [x] `Discover.tsx` — product grid layout
+- [x] `SearchScreen.tsx` — results grid
+- [x] `AddProduct.tsx` — centered wizard
+- [x] `ArtisanOrders.tsx` — 2-column order cards
+- [x] `BuyerOrders.tsx` — 2-column order cards
+- [x] `ArtisanAccount.tsx` — centered 2-col settings
+- [x] `BuyerAccount.tsx` — centered 2-col settings
+- [x] `ProductDetail.tsx` — 2-col image+details
+- [x] `ArtisanOrderDetail.tsx` — centered content
+- [x] `BuyerOrderDetail.tsx` — centered content
+- [x] `ArtisanSignup.tsx` — centered form
+- [x] `BuyerSignup.tsx` — centered form
+- [x] `PostRequest.tsx` — centered form
+- [x] `ArtisanProfile.tsx` — centered content
+- [x] `NotificationDetail.tsx` — centered content
 - [x] `FloatingAssistant.tsx` — responsive positioning
 
 ## Phase 4: Verification
-- [ ] `npm run build` passes
-- [ ] Visual check: mobile layout
-- [ ] Visual check: desktop layout
+- [x] `npm run build` passes
+- [x] Visual check: mobile layout
+- [x] Visual check: desktop layout

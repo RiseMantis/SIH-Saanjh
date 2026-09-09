@@ -34,7 +34,7 @@ export function ArtisanAccount() {
 
   const language = languages.find((l) => l.id === languageId);
   useAmbientPrompt('This is your account. You can record your story, check your documents, or see your earnings.');
-  return <div className="mx-auto max-w-3xl px-4 pb-40 pt-4 lg:px-8">
+  return <div className="mx-auto max-w-4xl px-4 pb-40 pt-4 lg:px-8">
       <section className="flex items-center gap-4 rounded-card border border-sand-300 bg-white p-4 shadow-card">
         <img src={currentArtisan.photo} alt="" className="h-24 w-24 shrink-0 rounded-full object-cover" />
         <div className="min-w-0">
@@ -50,55 +50,59 @@ export function ArtisanAccount() {
         </div>
       </section>
 
-      <section className="mt-4 rounded-card border border-sand-300 bg-white p-4 shadow-card">
-        <p className="text-artisan-body font-bold text-ink-900">
-          My earnings
-        </p>
-        <p className="mt-1 text-[32px] font-bold leading-10 text-ink-900">
-          ₹24,850
-        </p>
-        <p className="text-base text-ink-600">Received in the last 30 days</p>
-        <div className="mt-4 flex items-end gap-4">
-          <EarningsBar label="Last month" amount={18200} max={24850} />
-          <EarningsBar label="This month" amount={24850} max={24850} accent />
+      <div className="mt-4 space-y-4 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0">
+        <div>
+          <section className="rounded-card border border-sand-300 bg-white p-4 shadow-card">
+            <p className="text-artisan-body font-bold text-ink-900">
+              My earnings
+            </p>
+            <p className="mt-1 text-[32px] font-bold leading-10 text-ink-900">
+              ₹24,850
+            </p>
+            <p className="text-base text-ink-600">Received in the last 30 days</p>
+            <div className="mt-4 flex items-end gap-4">
+              <EarningsBar label="Last month" amount={18200} max={24850} />
+              <EarningsBar label="This month" amount={24850} max={24850} accent />
+            </div>
+          </section>
+
+          <section className="mt-4 rounded-card border border-ink-200 bg-ink-50 p-4">
+            <p className="flex items-center gap-2 text-base font-bold text-ink-900">
+              <span className="rounded-full bg-clay-500 px-2.5 py-1 text-sm font-bold text-white">
+                Seller view
+              </span>
+              You are selling right now
+            </p>
+            <p className="mt-2 text-base leading-6 text-ink-600">
+              If you also want to buy from other artisans, switch views. Nothing is
+              locked to this phone.
+            </p>
+            <Link to="/buyer/discover" onClick={() => setMode('buyer')} className="mt-3 inline-flex min-h-[56px] items-center gap-2 rounded-full border-2 border-ink-900 px-5 text-lg font-bold text-ink-900 transition-colors duration-150 ease-out hover:bg-white">
+              <RepeatIcon className="h-5 w-5" aria-hidden="true" />
+              Switch to buyer view
+            </Link>
+          </section>
         </div>
-      </section>
 
-      <ul className="mt-4 space-y-3">
-        <Row Icon={MicIcon} label="Edit my story" hint="Record how you learned your craft" onClick={() => speak('Tell me about yourself and your craft. I will save it for buyers to hear.')} />
-        <Row
-          Icon={FileTextIcon}
-          label="My documents & KYC"
-          hint={kycVerified ? "Aadhaar verified via DigiLocker" : "Tap to verify Aadhaar via DigiLocker"}
-          onClick={handleKycVerification}
-          badge={
-            <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-base font-bold ${kycVerified ? 'bg-leaf-50 text-leaf-700' : 'bg-gold-100 text-gold-800'}`}>
-              <BadgeCheckIcon className="h-5 w-5" aria-hidden="true" />
-              {kycLoading ? 'Verifying…' : kycVerified ? 'Verified' : 'Verify'}
-            </span>
-          }
-        />
-        <Row Icon={IndianRupeeIcon} label="Where my money goes" hint="Bank account ending 4412" />
-        <Row Icon={LanguagesIcon} label="Language" hint={`${language?.nativeName} · ${language?.latinName}`} to="/language" />
-        <Row Icon={BoxIcon} label="Get help" hint="Talk to a person in your language" onClick={() => speak('I am calling our help line. Someone who speaks your language will answer.')} />
-      </ul>
-
-      <section className="mt-5 rounded-card border border-ink-200 bg-ink-50 p-4">
-        <p className="flex items-center gap-2 text-base font-bold text-ink-900">
-          <span className="rounded-full bg-clay-500 px-2.5 py-1 text-sm font-bold text-white">
-            Seller view
-          </span>
-          You are selling right now
-        </p>
-        <p className="mt-2 text-base leading-6 text-ink-600">
-          If you also want to buy from other artisans, switch views. Nothing is
-          locked to this phone.
-        </p>
-        <Link to="/buyer/discover" onClick={() => setMode('buyer')} className="mt-3 inline-flex min-h-[56px] items-center gap-2 rounded-full border-2 border-ink-900 px-5 text-lg font-bold text-ink-900 transition-colors duration-150 ease-out hover:bg-white">
-          <RepeatIcon className="h-5 w-5" aria-hidden="true" />
-          Switch to buyer view
-        </Link>
-      </section>
+        <ul className="space-y-3">
+          <Row Icon={MicIcon} label="Edit my story" hint="Record how you learned your craft" onClick={() => speak('Tell me about yourself and your craft. I will save it for buyers to hear.')} />
+          <Row
+            Icon={FileTextIcon}
+            label="My documents & KYC"
+            hint={kycVerified ? "Aadhaar verified via DigiLocker" : "Tap to verify Aadhaar via DigiLocker"}
+            onClick={handleKycVerification}
+            badge={
+              <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-base font-bold ${kycVerified ? 'bg-leaf-50 text-leaf-700' : 'bg-gold-100 text-gold-800'}`}>
+                <BadgeCheckIcon className="h-5 w-5" aria-hidden="true" />
+                {kycLoading ? 'Verifying…' : kycVerified ? 'Verified' : 'Verify'}
+              </span>
+            }
+          />
+          <Row Icon={IndianRupeeIcon} label="Where my money goes" hint="Bank account ending 4412" />
+          <Row Icon={LanguagesIcon} label="Language" hint={`${language?.nativeName} · ${language?.latinName}`} to="/language" />
+          <Row Icon={BoxIcon} label="Get help" hint="Talk to a person in your language" onClick={() => speak('I am calling our help line. Someone who speaks your language will answer.')} />
+        </ul>
+      </div>
     </div>;
 }
 function EarningsBar({

@@ -59,7 +59,7 @@ export function PostRequest() {
   }
 
   return (
-    <div className="pb-6">
+    <div className="mx-auto max-w-3xl pb-6 lg:px-8">
       <header className="sticky top-0 z-20 border-b border-sand-300 bg-sand-100/95 px-3 pb-2.5 pt-3 backdrop-blur">
         <div className="flex items-center gap-2">
           {stage !== 'form' && stage !== 'done' &&

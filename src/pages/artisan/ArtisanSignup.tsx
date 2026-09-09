@@ -56,7 +56,7 @@ export function ArtisanSignup() {
   };
 
   return (
-    <div className="relative flex h-full flex-col bg-sand-100 font-sans">
+    <div className="relative mx-auto flex h-full max-w-xl flex-col bg-sand-100 font-sans lg:py-6">
       <header className="flex items-center gap-3 border-b border-sand-300 bg-white px-4 py-3">
         <button
           type="button"

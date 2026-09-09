@@ -15,7 +15,7 @@ export function ArtisanProfile() {
   const theirProducts = products.filter((p) => p.artisanId === artisan.id);
 
   return (
-    <div className="pb-6">
+    <div className="mx-auto max-w-5xl pb-6 lg:px-8">
       <header className="flex items-center gap-2 border-b border-sand-300 bg-white px-3 py-3">
         <button
           type="button"
@@ -28,15 +28,15 @@ export function ArtisanProfile() {
         <h1 className="text-lg font-bold text-ink-900">{artisan.name}</h1>
       </header>
 
-      <div className="px-4 pt-4">
+      <div className="px-4 pt-4 lg:px-0">
         <ArtisanModule artisan={artisan} linkToProfile={false} />
       </div>
 
-      <section className="mt-5 px-4" aria-labelledby="their-work">
+      <section className="mt-5 px-4 lg:px-0" aria-labelledby="their-work">
         <h2 id="their-work" className="text-sm font-bold text-ink-900">
           Available now ({theirProducts.length})
         </h2>
-        <ul className="mt-3 grid grid-cols-2 gap-3">
+        <ul className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 lg:gap-4">
           {theirProducts.map((product) =>
           <li key={product.id}>
               <ProductCard

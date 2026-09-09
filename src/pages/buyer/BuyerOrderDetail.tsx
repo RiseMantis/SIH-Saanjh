@@ -23,7 +23,7 @@ export function BuyerOrderDetail() {
   const canReview = order.status === 'delivered' || order.status === 'paid';
 
   return (
-    <div className="pb-6">
+    <div className="mx-auto max-w-3xl pb-6 lg:px-8">
       <header className="flex items-center gap-2 border-b border-sand-300 bg-white px-3 py-3">
         <button
           type="button"
