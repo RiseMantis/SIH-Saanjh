@@ -7,20 +7,22 @@ import {
   ShoppingBagIcon,
   UserIcon,
 } from 'lucide-react';
-
-const navLinks = [
-  { to: '/buyer/discover', label: 'Discover', Icon: CompassIcon },
-  { to: '/buyer/search', label: 'Search', Icon: SearchIcon },
-  { to: '/buyer/request', label: 'Request', Icon: ClipboardListIcon },
-  { to: '/buyer/orders', label: 'Orders', Icon: ShoppingBagIcon },
-  { to: '/buyer/account', label: 'Account', Icon: UserIcon },
-];
+import { useApp } from '../../contexts/AppContext';
 
 /**
  * Horizontal top navigation bar for buyer mode on desktop (≥ 1024px).
  * Hidden on mobile — the bottom BuyerTabBar handles navigation there.
  */
 export function BuyerTopNav() {
+  const { t } = useApp();
+  const navLinks = [
+    { to: '/buyer/discover', label: t('discover'), Icon: CompassIcon },
+    { to: '/buyer/search', label: t('navSearch'), Icon: SearchIcon },
+    { to: '/buyer/request', label: t('navPostRequest'), Icon: ClipboardListIcon },
+    { to: '/buyer/orders', label: t('navOrders'), Icon: ShoppingBagIcon },
+    { to: '/buyer/account', label: t('navAccount'), Icon: UserIcon },
+  ];
+
   return (
     <nav
       aria-label="Main"

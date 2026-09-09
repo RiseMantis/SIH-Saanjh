@@ -4,6 +4,8 @@ import { OrderCard } from '../../components/shared/OrderCard';
 import { EmptyState } from '../../components/shared/EmptyState';
 import { buyerOrders } from '../../data/orders';
 
+import { useApp } from '../../contexts/AppContext';
+
 type Filter = 'all' | 'active' | 'completed';
 
 const filters: {id: Filter;label: string;}[] = [
@@ -13,6 +15,7 @@ const filters: {id: Filter;label: string;}[] = [
 
 
 export function BuyerOrders() {
+  const { t } = useApp();
   const [filter, setFilter] = useState<Filter>('all');
 
   const orders = buyerOrders.filter((o) => {
@@ -25,7 +28,7 @@ export function BuyerOrders() {
   return (
     <div className="mx-auto max-w-5xl px-4 pb-6 lg:px-8">
       <header className="sticky top-0 z-20 border-b border-sand-300 bg-sand-100/95 px-4 pb-2.5 pt-3 backdrop-blur">
-        <h1 className="text-xl font-bold text-ink-900">Orders</h1>
+        <h1 className="text-xl font-bold text-ink-900">{t('navOrders')}</h1>
         <ul className="mt-2 flex gap-2" role="tablist" aria-label="Order filter">
           {filters.map((f) =>
           <li key={f.id}>

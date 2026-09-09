@@ -26,7 +26,7 @@ export function SearchScreen() {
   const [maxPrice, setMaxPrice] = useState(4000);
   const [minTrust, setMinTrust] = useState(4);
   const [bulkOnly, setBulkOnly] = useState(false);
-  const { saved, toggleSaved, speak } = useApp();
+  const { saved, toggleSaved, speak, t } = useApp();
 
   const results = useMemo(
     () =>
@@ -76,7 +76,7 @@ export function SearchScreen() {
             id="buyer-search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search crafts, artisans, villages"
+            placeholder={t('searchPlaceholder')}
             className="h-12 min-w-0 flex-1 bg-transparent text-[15px] text-ink-900 placeholder:text-ink-400 focus:outline-none" />
           
           <MicButton

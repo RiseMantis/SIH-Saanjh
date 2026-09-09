@@ -8,7 +8,7 @@ import { VoiceCaption } from '../components/shared/VoiceCaption';
 import { languages } from '../data/languages';
 
 export function LanguageSelect() {
-  const { mode, languageId, setLanguageId, speak } = useApp();
+  const { mode, languageId, setLanguageId, speak, t } = useApp();
   const navigate = useNavigate();
   const artisan = mode === 'artisan';
 
@@ -61,7 +61,7 @@ export function LanguageSelect() {
           }
           className="flex min-h-[64px] w-full items-center justify-center gap-2 rounded-full bg-clay-500 text-artisan-label font-bold text-white transition-colors duration-150 ease-out hover:bg-clay-600 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-clay-300">
           
-          Continue
+          {t('continueBtn')}
           <ArrowRightIcon className="h-6 w-6" aria-hidden="true" />
         </button>
       </div>

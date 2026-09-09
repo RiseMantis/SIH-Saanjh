@@ -12,7 +12,8 @@ export function ArtisanAccount() {
   const {
     languageId,
     setMode,
-    speak
+    speak,
+    t
   } = useApp();
   const [kycVerified, setKycVerified] = useState(true);
   const [kycLoading, setKycLoading] = useState(false);
@@ -54,7 +55,7 @@ export function ArtisanAccount() {
         <div>
           <section className="rounded-card border border-sand-300 bg-white p-4 shadow-card">
             <p className="text-artisan-body font-bold text-ink-900">
-              My earnings
+              {t('myEarnings')}
             </p>
             <p className="mt-1 text-[32px] font-bold leading-10 text-ink-900">
               ₹24,850

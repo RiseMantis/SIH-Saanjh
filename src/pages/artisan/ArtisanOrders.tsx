@@ -5,9 +5,12 @@ import { OrderCard } from '../../components/shared/OrderCard';
 import { EmptyState } from '../../components/shared/EmptyState';
 import { artisanOrders } from '../../data/orders';
 
+import { useApp } from '../../contexts/AppContext';
+
 type Filter = 'ongoing' | 'completed';
 
 export function ArtisanOrders() {
+  const { t } = useApp();
   const [filter, setFilter] = useState<Filter>('ongoing');
   useAmbientPrompt(
     'These are your orders. Two are still being made. Tap any order and I will read it to you.'
@@ -21,7 +24,7 @@ export function ArtisanOrders() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 pb-40 pt-4 lg:px-8">
-      <h1 className="text-[26px] font-bold text-ink-900">My orders</h1>
+      <h1 className="text-[26px] font-bold text-ink-900">{t('myOrders')}</h1>
 
       <div className="mt-3 flex gap-3" role="tablist" aria-label="Order filter">
         {(['ongoing', 'completed'] as Filter[]).map((f) =>

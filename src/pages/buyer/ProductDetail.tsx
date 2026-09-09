@@ -21,11 +21,16 @@ import { gemSync, ondcSync } from '../../services/api';
 export function ProductDetail() {
   const { productId } = useParams();
   const navigate = useNavigate();
-  const { saved, toggleSaved, addToCart, buyerAccountType, cart } = useApp();
+  const { saved, toggleSaved, addToCart, buyerAccountType, cart, t } = useApp();
   const [activeImage, setActiveImage] = useState(0);
   const [gemStatus, setGemStatus] = useState<string | null>(null);
   const [ondcStatus, setOndcStatus] = useState<string | null>(null);
   const [syncing, setSyncing] = useState<'gem' | 'ondc' | null>(null);
+
+  const product = productById(productId ?? '') ?? products[0];
+  const artisan = artisanById(product.artisanId);
+  const isSaved = saved.includes(product.id);
+  const inCart = cart.includes(product.id);
 
   const handleGemSync = async () => {
     setSyncing('gem');
@@ -130,7 +135,7 @@ export function ProductDetail() {
               className="flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-clay-500 text-[15px] font-semibold text-white transition-colors duration-150 ease-out hover:bg-clay-600">
               
               <ShoppingCartIcon className="h-4 w-4" aria-hidden="true" />
-              {inCart ? 'In your cart' : 'Add to cart'}
+              {inCart ? t('inCart') : t('addToCart')}
             </button>
             <div className="grid grid-cols-2 gap-2.5">
               <button

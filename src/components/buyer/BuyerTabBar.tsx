@@ -7,16 +7,18 @@ import {
   ShoppingBagIcon,
   UserIcon } from
 'lucide-react';
-
-const tabs = [
-{ to: '/buyer/discover', label: 'Discover', Icon: CompassIcon },
-{ to: '/buyer/search', label: 'Search', Icon: SearchIcon },
-{ to: '/buyer/request', label: 'Request', Icon: ClipboardListIcon },
-{ to: '/buyer/orders', label: 'Orders', Icon: ShoppingBagIcon },
-{ to: '/buyer/account', label: 'Account', Icon: UserIcon }];
-
+import { useApp } from '../../contexts/AppContext';
 
 export function BuyerTabBar() {
+  const { t } = useApp();
+  const tabs = [
+    { to: '/buyer/discover', label: t('discover'), Icon: CompassIcon },
+    { to: '/buyer/search', label: t('navSearch'), Icon: SearchIcon },
+    { to: '/buyer/request', label: t('navPostRequest'), Icon: ClipboardListIcon },
+    { to: '/buyer/orders', label: t('navOrders'), Icon: ShoppingBagIcon },
+    { to: '/buyer/account', label: t('navAccount'), Icon: UserIcon }
+  ];
+
   return (
     <nav
       aria-label="Main"

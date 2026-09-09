@@ -1,14 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { CameraIcon, HomeIcon, PackageIcon, UserIcon } from 'lucide-react';
-
-const tabs = [
-{ to: '/artisan/home', label: 'Home', Icon: HomeIcon },
-{ to: '/artisan/orders', label: 'My orders', Icon: PackageIcon },
-{ to: '/artisan/account', label: 'My account', Icon: UserIcon }];
-
+import { useApp } from '../../contexts/AppContext';
 
 export function ArtisanTabBar() {
+  const { t } = useApp();
+  const tabs = [
+    { to: '/artisan/home', label: t('navHome'), Icon: HomeIcon },
+    { to: '/artisan/orders', label: t('navOrders'), Icon: PackageIcon },
+    { to: '/artisan/account', label: t('navAccount'), Icon: UserIcon }
+  ];
+
   return (
     <nav
       aria-label="Main"
@@ -25,7 +27,7 @@ export function ArtisanTabBar() {
             }>
             
             <CameraIcon className="h-9 w-9" aria-hidden="true" />
-            <span className="text-[13px] font-bold leading-none">Add</span>
+            <span className="text-[13px] font-bold leading-none">{t('addProduct').split(' ')[0]}</span>
           </NavLink>
         </li>
         <TabItem {...tabs[1]} />

@@ -1,18 +1,20 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { CameraIcon, HomeIcon, PackageIcon, UserIcon } from 'lucide-react';
-
-const navLinks = [
-  { to: '/artisan/home', label: 'Home', Icon: HomeIcon },
-  { to: '/artisan/orders', label: 'My Orders', Icon: PackageIcon },
-  { to: '/artisan/account', label: 'My Account', Icon: UserIcon },
-];
+import { useApp } from '../../contexts/AppContext';
 
 /**
  * Horizontal top navigation bar for artisan mode on desktop (≥ 1024px).
  * Hidden on mobile — the bottom ArtisanTabBar handles navigation there.
  */
 export function ArtisanTopNav() {
+  const { t } = useApp();
+  const navLinks = [
+    { to: '/artisan/home', label: t('navHome'), Icon: HomeIcon },
+    { to: '/artisan/orders', label: t('myOrders'), Icon: PackageIcon },
+    { to: '/artisan/account', label: t('navAccount'), Icon: UserIcon },
+  ];
+
   return (
     <nav
       aria-label="Main"
@@ -55,7 +57,7 @@ export function ArtisanTopNav() {
             }
           >
             <CameraIcon className="h-4 w-4" aria-hidden="true" />
-            Add Product
+            {t('addProduct')}
           </NavLink>
         </li>
       </ul>
