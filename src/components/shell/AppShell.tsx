@@ -1,22 +1,18 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { AnnotationPanel } from './AnnotationPanel';
-import { ScreenRail } from './ScreenRail';
 
 /**
- * Desktop review shell: screen index on the left, the 390dp device in the middle,
- * design annotations on the right. On a real phone the device fills the viewport.
+ * Full-viewport app shell. Renders route content directly without
+ * any device-frame simulation or sidebar navigation.
+ *
+ * Previously this component wrapped content in a 390×844 "phone mockup"
+ * with a ScreenRail sidebar and AnnotationPanel — those are now removed
+ * in favour of a truly responsive layout.
  */
-export function AppShell({ showAnnotations = true }: {showAnnotations?: boolean;}) {
+export function AppShell() {
   return (
-    <div className="flex h-full w-full overflow-hidden bg-sand-200 paper-grain font-sans">
-      <ScreenRail />
-      <div className="flex min-w-0 flex-1 items-center justify-center gap-10 lg:px-8">
-        <div className="relative h-full w-full overflow-hidden bg-sand-100 lg:h-[844px] lg:max-h-[calc(100vh-72px)] lg:w-[390px] lg:shrink-0 lg:rounded-[40px] lg:border-[10px] lg:border-ink-900 lg:shadow-frame">
-          <Outlet />
-        </div>
-        {showAnnotations && <AnnotationPanel />}
-      </div>
-    </div>);
-
+    <div className="flex h-full w-full flex-col bg-sand-100 font-sans">
+      <Outlet />
+    </div>
+  );
 }

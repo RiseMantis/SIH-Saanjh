@@ -12,7 +12,7 @@ export function BuyerAccount() {
   } = useApp();
   const business = buyerAccountType === 'business';
   const savedProducts = products.filter((p) => saved.includes(p.id));
-  return <div className="pb-6">
+  return <div className="mx-auto max-w-3xl pb-6">
       <header className="border-b border-sand-300 bg-white px-4 py-4">
         <div className="flex items-center gap-3">
           <span className="flex h-14 w-14 items-center justify-center rounded-full bg-ink-900 text-lg font-bold text-white">

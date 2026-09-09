@@ -52,7 +52,7 @@ export function ProductDetail() {
   };
 
   return (
-    <div className="pb-4">
+    <div className="mx-auto max-w-5xl pb-4 lg:px-8">
       <div className="relative">
         <img
           src={product.images[activeImage]}

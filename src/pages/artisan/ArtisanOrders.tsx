@@ -20,7 +20,7 @@ export function ArtisanOrders() {
   );
 
   return (
-    <div className="px-4 pb-40 pt-4">
+    <div className="mx-auto max-w-5xl px-4 pb-40 pt-4 lg:px-8">
       <h1 className="text-[26px] font-bold text-ink-900">My orders</h1>
 
       <div className="mt-3 flex gap-3" role="tablist" aria-label="Order filter">
@@ -43,7 +43,7 @@ export function ArtisanOrders() {
         )}
       </div>
 
-      <div className="mt-4 space-y-3">
+      <div className="mt-4 space-y-3 lg:grid lg:grid-cols-2 lg:gap-4 lg:space-y-0">
         {orders.length === 0 ?
         <EmptyState
           Icon={PackageIcon}

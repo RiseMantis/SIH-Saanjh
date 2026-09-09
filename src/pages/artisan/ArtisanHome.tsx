@@ -26,7 +26,7 @@ export function ArtisanHome() {
   useAmbientPrompt(greeting);
 
   return (
-    <div className="px-4 pb-40 pt-4">
+    <div className="mx-auto max-w-5xl px-4 pb-40 pt-4 lg:px-8 lg:pt-8">
       <section className="rounded-card bg-ink-900 p-4 text-white">
         <div className="flex items-center gap-3">
           <img
@@ -55,7 +55,7 @@ export function ArtisanHome() {
 
       <Link
         to="/artisan/add"
-        className="mt-4 flex min-h-[228px] flex-col items-center justify-center gap-3 rounded-sheet bg-clay-500 px-6 py-8 text-center text-white shadow-lift transition-[background-color,transform] duration-150 ease-out active:scale-[0.99] hover:bg-clay-600 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-clay-300">
+        className="mt-4 flex min-h-[228px] flex-col items-center justify-center gap-3 rounded-sheet bg-clay-500 px-6 py-8 text-center text-white shadow-lift transition-[background-color,transform] duration-150 ease-out active:scale-[0.99] hover:bg-clay-600 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-clay-300 lg:min-h-[160px] lg:flex-row lg:justify-start lg:gap-6 lg:text-left">
         
         <span className="flex h-24 w-24 items-center justify-center rounded-full bg-white/15">
           <CameraIcon className="h-14 w-14" aria-hidden="true" />
@@ -72,7 +72,7 @@ export function ArtisanHome() {
         Your day
       </h2>
 
-      <div className="mt-3 space-y-3">
+      <div className="mt-3 space-y-3 lg:grid lg:grid-cols-3 lg:gap-4 lg:space-y-0">
         <SummaryCard
           to="/artisan/orders"
           tone="amber"

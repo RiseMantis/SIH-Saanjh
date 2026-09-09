@@ -12,7 +12,7 @@ export function ArtisanTabBar() {
   return (
     <nav
       aria-label="Main"
-      className="relative z-30 shrink-0 border-t border-ink-800 bg-ink-900 pb-2 pt-2">
+      className="relative z-30 shrink-0 border-t border-ink-800 bg-ink-900 pb-2 pt-2 lg:hidden">
       
       <ul className="flex items-end justify-around px-2">
         <TabItem {...tabs[0]} />

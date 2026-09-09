@@ -28,7 +28,7 @@ export function FloatingAssistant() {
     speak('Listening…');
     window.setTimeout(() => setListening(false), 2600);
   };
-  return <div className="pointer-events-none absolute bottom-[112px] right-4 z-40 flex flex-col items-end gap-3">
+  return <div className="pointer-events-none absolute bottom-[112px] right-4 z-40 flex flex-col items-end gap-3 lg:bottom-8 lg:right-8">
       <button type="button" onClick={() => speak(note.voicePrompt || 'This screen shows your information. Tell me what you want to do.')} className="pointer-events-auto flex min-h-[56px] items-center gap-2 rounded-full border-2 border-ink-900 bg-white px-4 text-base font-bold text-ink-900 shadow-card transition-colors duration-150 ease-out hover:bg-sand-100">
         <div className="h-6 w-6" aria-hidden="true" />
         Help me

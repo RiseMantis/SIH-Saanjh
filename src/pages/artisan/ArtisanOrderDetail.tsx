@@ -41,7 +41,7 @@ export function ArtisanOrderDetail() {
   const spoken = `${product.title}, for ${order.counterpartName} in ${order.counterpartLocation}. Amount ${order.amount} rupees. Right now it is ${statusMeta[order.status].label}.`;
 
   return (
-    <div className="pb-40">
+    <div className="mx-auto max-w-3xl pb-40 lg:px-8">
       <header className="flex items-center gap-3 border-b border-sand-300 bg-white px-3 py-3">
         <button
           type="button"

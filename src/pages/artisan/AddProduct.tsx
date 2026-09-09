@@ -41,7 +41,7 @@ export function AddProduct() {
   }
 
   return (
-    <div>
+    <div className="mx-auto max-w-2xl lg:px-8">
       <header className="sticky top-0 z-20 border-b border-sand-300 bg-white px-3 py-3">
         <div className="flex items-center gap-3">
           <button

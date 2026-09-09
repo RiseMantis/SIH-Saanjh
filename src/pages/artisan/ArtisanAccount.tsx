@@ -34,7 +34,7 @@ export function ArtisanAccount() {
 
   const language = languages.find((l) => l.id === languageId);
   useAmbientPrompt('This is your account. You can record your story, check your documents, or see your earnings.');
-  return <div className="px-4 pb-40 pt-4">
+  return <div className="mx-auto max-w-3xl px-4 pb-40 pt-4 lg:px-8">
       <section className="flex items-center gap-4 rounded-card border border-sand-300 bg-white p-4 shadow-card">
         <img src={currentArtisan.photo} alt="" className="h-24 w-24 shrink-0 rounded-full object-cover" />
         <div className="min-w-0">

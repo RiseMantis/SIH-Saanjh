@@ -20,7 +20,7 @@ export function BuyerTabBar() {
   return (
     <nav
       aria-label="Main"
-      className="relative z-30 shrink-0 border-t border-ink-800 bg-ink-900 px-1 py-1.5">
+      className="relative z-30 shrink-0 border-t border-ink-800 bg-ink-900 px-1 py-1.5 lg:hidden">
       
       <ul className="flex items-stretch justify-around">
         {tabs.map(({ to, label, Icon }) =>

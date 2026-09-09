@@ -15,7 +15,7 @@ export function RoleSelect() {
   return (
     <div className="relative flex h-full flex-col bg-sand-100 font-sans">
       <div className="screen-scroll flex-1">
-        <header className="relative overflow-hidden bg-ink-900 px-6 pb-8 pt-10 text-white">
+        <header className="relative overflow-hidden bg-ink-900 px-6 pb-8 pt-10 text-white lg:px-0 lg:pb-14 lg:pt-16">
           <div className="absolute inset-0 opacity-25" aria-hidden="true">
             <img
               src={images.pottery}
@@ -23,12 +23,12 @@ export function RoleSelect() {
               className="h-full w-full object-cover" />
             
           </div>
-          <div className="relative">
+          <div className="relative mx-auto max-w-2xl lg:text-center">
             <p className="font-deva text-lg text-clay-300">नमस्ते · Welcome</p>
-            <h1 className="mt-2 text-[32px] font-bold leading-[1.15]">
+            <h1 className="mt-2 text-[32px] font-bold leading-[1.15] lg:text-5xl">
               Saanjh
             </h1>
-            <p className="mt-2 max-w-[280px] text-lg leading-7 text-ink-100">
+            <p className="mt-2 max-w-[280px] text-lg leading-7 text-ink-100 lg:mx-auto lg:max-w-md lg:text-xl">
               A market for handmade things, spoken in your language.
             </p>
             <button
@@ -42,26 +42,28 @@ export function RoleSelect() {
           </div>
         </header>
 
-        <div className="space-y-4 px-5 py-6">
+        <div className="mx-auto max-w-2xl space-y-4 px-5 py-6 lg:px-8 lg:py-10">
           <h2 className="text-artisan-label font-bold text-ink-900">
             What brings you here?
           </h2>
 
-          <RoleCard
-            to="/language"
-            onSelect={() => setMode('artisan')}
-            title="I make and sell crafts"
-            subtitle="List what you made by speaking. No typing needed."
-            image={images.artisanWoman}
-            emphasis />
-          
+          <div className="space-y-4 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0">
+            <RoleCard
+              to="/language"
+              onSelect={() => setMode('artisan')}
+              title="I make and sell crafts"
+              subtitle="List what you made by speaking. No typing needed."
+              image={images.artisanWoman}
+              emphasis />
+            
 
-          <RoleCard
-            to="/language"
-            onSelect={() => setMode('buyer')}
-            title="I want to buy crafts"
-            subtitle="Browse, search and order directly from artisans."
-            icon={<ShoppingBasketIcon className="h-12 w-12" aria-hidden="true" />} />
+            <RoleCard
+              to="/language"
+              onSelect={() => setMode('buyer')}
+              title="I want to buy crafts"
+              subtitle="Browse, search and order directly from artisans."
+              icon={<ShoppingBasketIcon className="h-12 w-12" aria-hidden="true" />} />
+          </div>
           
 
           <p className="pt-2 text-center text-base leading-6 text-ink-500">

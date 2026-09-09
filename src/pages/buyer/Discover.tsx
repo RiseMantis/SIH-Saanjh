@@ -66,7 +66,7 @@ export function Discover() {
   const feed = dbProducts.length > 0 ? [...dbProducts, ...localFeed] : localFeed;
 
   return (
-    <div className="pb-6">
+    <div className="mx-auto max-w-6xl pb-6">
       <header className="sticky top-0 z-20 border-b border-sand-300 bg-sand-100/95 backdrop-blur">
         <div className="flex items-center justify-between px-4 pb-2 pt-3">
           <div>
@@ -145,7 +145,7 @@ export function Discover() {
       </section>
 
       <section className="mt-5 px-4" aria-label="Artisan posts">
-        <div className="space-y-4">
+        <div className="space-y-4 lg:grid lg:grid-cols-2 lg:gap-6 lg:space-y-0 xl:grid-cols-3">
           {feed.map((product) =>
           <ProductCard
             key={product.id}

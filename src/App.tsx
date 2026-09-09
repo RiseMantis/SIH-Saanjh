@@ -58,19 +58,17 @@ function EntryRedirect({ entryScreen }: {entryScreen: EntryScreen;}) {
 
 interface AppProps {
   entryScreen?: EntryScreen;
-  showAnnotations?: boolean;
 }
 
 export function App({
-  entryScreen = 'onboarding',
-  showAnnotations = true
+  entryScreen = 'onboarding'
 }: AppProps) {
   return (
     <AppProvider>
       <BrowserRouter>
         <EntryRedirect entryScreen={entryScreen} />
         <Routes>
-          <Route element={<AppShell showAnnotations={showAnnotations} />}>
+          <Route element={<AppShell />}>
             <Route path="/" element={<RoleSelect />} />
             <Route path="/language" element={<LanguageSelect />} />
             <Route path="/artisan/signup" element={<ArtisanSignup />} />

@@ -65,7 +65,7 @@ export function SearchScreen() {
   };
 
   return (
-    <div className="pb-6">
+    <div className="mx-auto max-w-6xl pb-6">
       <header className="sticky top-0 z-20 space-y-2.5 border-b border-sand-300 bg-sand-100/95 px-4 pb-3 pt-3 backdrop-blur">
         <div className="flex items-center gap-2 rounded-full border border-sand-400 bg-white pl-3.5 pr-1.5">
           <SearchIcon className="h-4 w-4 shrink-0 text-ink-400" aria-hidden="true" />
@@ -213,7 +213,7 @@ export function SearchScreen() {
           
           </div> :
 
-        <ul className="mt-3 grid grid-cols-2 gap-3">
+        <ul className="mt-3 grid grid-cols-2 gap-3 xl:grid-cols-3">
             {results.map((product) =>
           <li key={product.id}>
                 <ProductCard
